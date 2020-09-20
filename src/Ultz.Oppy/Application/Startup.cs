@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Ultz.Oppy.Core;
 
 namespace Ultz.Oppy.Application
 {
@@ -16,25 +18,17 @@ namespace Ultz.Oppy.Application
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app)
-        {
-            app.Run(async context =>
-            {
-                var memory = new Memory<byte>(new byte[4096]);
-                var length = await context.Request.Body.ReadAsync(memory);
-                context.Response.Headers["test"] = "foo";
-                // for testing
-                await context.Response.WriteAsync("Hello World! " + context.Request.Protocol);
-            });
-        }
+        public void Configure(IApplicationBuilder app) => app.RunOppy();
 
-        public static int Main(string[] args)
+        public static void Main(string[] args)
         {
             var webHostBuilder = new WebHostBuilder();
-            webHostBuilder.UseKestrel((context, opts) =>
-            {
-                
-            }).UseStartup<Startup>().Build().Run();
+            webHostBuilder
+                .UseOppy(listener =>
+                    listener.AddHosts(OppyInstallation.Hosts.Select(x => new Core.Host(in x, listener)).ToArray()))
+                .UseStartup<Startup>()
+                .Build()
+                .Run();
         }
     }
 }

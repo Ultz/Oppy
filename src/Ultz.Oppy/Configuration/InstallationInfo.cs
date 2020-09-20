@@ -38,8 +38,10 @@ namespace Ultz.Oppy.Configuration
             HostsDir = Path.GetFullPath(HostsDir, Path.GetDirectoryName(file)!),
             PluginsDir = Path.GetFullPath(PluginsDir, Path.GetDirectoryName(file)!),
         };
-        
-        public static InstallationInfo Get() => JsonSerializer.Deserialize<InstallationInfo>(
-                File.ReadAllText(Path.Combine(AppContext.BaseDirectory, FileName)));
+
+        public static InstallationInfo Get()
+            => JsonSerializer
+                .Deserialize<InstallationInfo>(File.ReadAllText(Path.Combine(AppContext.BaseDirectory, FileName)))
+                .GetAbsolute(Path.Combine(AppContext.BaseDirectory, FileName));
     }
 }

@@ -30,6 +30,8 @@ namespace Ultz.Oppy.Core
                     return host.Content.HandleAsync(context);
                 }
             }
+
+            return Task.CompletedTask;
         }
     }
 }

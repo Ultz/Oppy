@@ -7,19 +7,24 @@ namespace Ultz.Oppy.Content
 {
     public static class ContentAggregateExtensions
     {
-        public static Func<HttpContext, Task>? Aggregate(this IReadOnlyList<IContent> handlers)
-        {
-            return handlers.Aggregate(0);
-        }
+        public static void Aggregate(this IReadOnlyList<IHandler> handlers, out Func<HttpContext, Task>? handleAsync,
+            out Func<string, string, Task>? loadFileAsync) => handlers.Aggregate(0, out handleAsync, out loadFileAsync);
 
-        private static Func<HttpContext, Task>? Aggregate(this IReadOnlyList<IContent> handlers, int index)
+        private static void Aggregate(this IReadOnlyList<IHandler> handlers, int index,
+            out Func<HttpContext, Task>? handleAsync, out Func<string, string, Task>? loadFileAsync)
         {
-            if (index == handlers.Count) return null;
+            handleAsync = null;
+            loadFileAsync = null;
+            if (index == handlers.Count) return;
 
             var currentHandler = handlers[index];
-            var nextHandler = handlers.Aggregate(index + 1);
+            handlers.Aggregate(index + 1, out var nextHandler, out var nextLoadFile);
 
-            return context => currentHandler.HandleAsync(context, () => nextHandler?.Invoke(context) ?? Task.CompletedTask);
+            handleAsync = context =>
+                currentHandler.HandleAsync(context, () => nextHandler?.Invoke(context) ?? Task.CompletedTask);
+            loadFileAsync = (oppyPath, diskPath) =>
+                currentHandler.LoadFileAsync(oppyPath, diskPath,
+                    () => nextLoadFile?.Invoke(oppyPath, diskPath) ?? Task.CompletedTask);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Ultz.Oppy.Scripting
         /// <remarks>
         /// Example CSX file using this:
         /// <code>
-        /// OppyHelpers.NewHandler
+        /// OppyHelpers.Handler
         /// (
         ///     async (context, nextHandler) =>
         ///     {
@@ -25,7 +25,8 @@ namespace Ultz.Oppy.Scripting
         /// </remarks>
         /// <param name="handler"></param>
         /// <returns></returns>
-        public static IContent Handler(Func<HttpContext, Func<Task>, Task> handler) => new LamdaContent(handler);
-        
+        public static HandlerScript Handler(Func<HttpContext, Func<Task>, Task> handler,
+            PathMatchingMode matchingMode = PathMatchingMode.Default)
+            => new HandlerScript(handler, matchingMode);
     }
 }

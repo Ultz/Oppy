@@ -1,4 +1,6 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Collections.Generic;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Ultz.Oppy.Configuration
 {
@@ -22,5 +24,11 @@ namespace Ultz.Oppy.Configuration
         /// </summary>
         [JsonPropertyName("listen")]
         public ListenerInfo[] Listeners { get; set; }
+        
+        /// <summary>
+        /// Miscellaneous configuration, used throughout Oppy and its handlers.
+        /// </summary>
+        [JsonPropertyName("config")]
+        public JsonElement Config { get; set; }
     }
 }

@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Security.Authentication;
 using System.Security.Cryptography.X509Certificates;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
@@ -13,8 +15,11 @@ namespace Ultz.Oppy.Core
 {
     public class Host
     {
-        public Host(in HostInfo info)
+        public Listener Parent { get; }
+
+        public Host(in HostInfo info, Listener parent)
         {
+            Parent = parent;
             Listeners = new Dictionary<ushort, (SslProtocols, HttpProtocols, Dictionary<string, X509Certificate2>)>();
             foreach (var listener in info.Listeners)
             {
@@ -24,11 +29,20 @@ namespace Ultz.Oppy.Core
                 {
                     switch (protocol.Trim().Replace(".", null).ToLower())
                     {
+#if NETCOREAPP3_1
                         case "tls13":
                         {
                             ssl |= SslProtocols.Tls13;
                             break;
                         }
+#else
+                        case "tls13":
+                        {
+                            Console.WriteLine("TLS 1.3 not supported. Reverting to TLS 1.2...");
+                            ssl |= SslProtocols.Tls12;
+                            break;
+                        }
+#endif
                         case "tls12":
                         {
                             ssl |= SslProtocols.Tls12;
@@ -65,11 +79,13 @@ namespace Ultz.Oppy.Core
             }
 
             Names = info.ServerNames?.Select(x => x.Trim().ToLower()).ToArray();
-            Content = new ContentRegistrar(info.ContentDirectory);
+            Content = new ContentRegistrar(info.ContentDirectory, this);
+            Config = info.Config;
         }
 
         public ContentRegistrar Content { get; }
         public string[]? Names { get; }
+        public JsonElement Config { get; }
 
         public Dictionary<ushort, (SslProtocols, HttpProtocols, Dictionary<string, X509Certificate2>)> Listeners
         {
