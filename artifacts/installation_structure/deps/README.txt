@@ -1,0 +1,1 @@
+Miscellaneous DLLs and nupkgs required by plugins go in this folder.

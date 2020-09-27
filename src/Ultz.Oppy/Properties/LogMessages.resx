@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="LoadingFile" xml:space="preserve">
+        <value>Updating file "{0}" as "{1}"...</value>
+    </data>
+    <data name="UnhandledException" xml:space="preserve">
+        <value>Unhandled exception: {0}</value>
+    </data>
+    <data name="Registering" xml:space="preserve">
+        <value>Registering "{0}"...</value>
+    </data>
+    <data name="ScriptEvalError" xml:space="preserve">
+        <value>Error when evaluating script at "{0}", it will no longer be served: {1}</value>
+    </data>
+    <data name="Started" xml:space="preserve">
+        <value>Oppy startup completed in {0} millisecond(s).</value>
+    </data>
+    <data name="Tls13NotSupported" xml:space="preserve">
+        <value>{0}: TLS 1.3 not supported. Reverting to TLS 1.2...</value>
+    </data>
+    <data name="LoadingHosts" xml:space="preserve">
+        <value>Loading hosts...</value>
+    </data>
+    <data name="LoadHostFailed" xml:space="preserve">
+        <value>Couldn't load host configuration: {0}</value>
+    </data>
+    <data name="StartingOppy" xml:space="preserve">
+        <value>Starting Oppy...</value>
+    </data>
+    <data name="LoadedFile" xml:space="preserve">
+        <value>Loaded "{0}" as "{1}" in {2} millisecond(s).</value>
+    </data>
+</root>

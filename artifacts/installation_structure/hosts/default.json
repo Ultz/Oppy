@@ -1,0 +1,17 @@
+{
+    "wwwDir": "../www/default",
+    "names": [
+        "localhost"
+    ],
+    "listen": [
+        {
+            "proto": [
+                "http1",
+                "http2"
+            ],
+            "port": 8080
+        }
+    ],
+    "config": {
+    }
+}

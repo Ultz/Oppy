@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                background: #ccc;
+                color: #333;
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+            }
+            
+            h1 {
+                font-size: 48px;
+            }
+
+            p {
+                font-size: 24px;
+            }
+            
+            p small {
+                font-size: 12px;
+                color: #777;
+            }
+
+
+            .center {
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+        </style>
+    </head>
+    <body>
+            <div class="center">
+            <h1>
+                <oppy-short-error />
+            </h1>
+            <p>
+                <oppy-long-error /><br />
+                <small>Oppy v<oppy-version /> | (C) <oppy-year /> Ultz Limited</small>
+            </p>
+            </div>
+    </body>
+</html>

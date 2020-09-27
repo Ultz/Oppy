@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="HandlerRanDry" xml:space="preserve">
+        <value>Internal server error: The handler ran dry with no error and a partial response.</value>
+    </data>
+    <data name="BadRequest" xml:space="preserve">
+        <value>The incoming request was malformed.</value>
+    </data>
+    <data name="Unauthorized" xml:space="preserve">
+        <value>Authorization is required to access this resource.</value>
+    </data>
+    <data name="PaymentRequired" xml:space="preserve">
+        <value>Payment is required to access this resource.</value>
+    </data>
+    <data name="Forbidden" xml:space="preserve">
+        <value>The incoming request was forbidden from accessing the resource.</value>
+    </data>
+    <data name="NotFound" xml:space="preserve">
+        <value>The target resource was not found.</value>
+    </data>
+    <data name="MethodNotAllowed" xml:space="preserve">
+        <value>The incoming method is not applicable for this resource.</value>
+    </data>
+    <data name="NotAcceptable" xml:space="preserve">
+        <value>The incoming request indicates this resource is not in an acceptable format.</value>
+    </data>
+    <data name="ProxyAuthenticationRequired" xml:space="preserve">
+        <value>Proxy authentication is required to access this resource.</value>
+    </data>
+    <data name="RequestTimeout" xml:space="preserve">
+        <value>The server timed out waiting for the request.</value>
+    </data>
+    <data name="Conflict" xml:space="preserve">
+        <value>The request could not be processed due to a conflict in resource state.</value>
+    </data>
+    <data name="Gone" xml:space="preserve">
+        <value>"Te resource is unavailable and will remain unavailable indefinitely.</value>
+    </data>
+    <data name="LengthRequired" xml:space="preserve">
+        <value>The request did not specify the length of its content.</value>
+    </data>
+    <data name="PreconditionFailed" xml:space="preserve">
+        <value>The server doesn't meet the request's preconditions.</value>
+    </data>
+    <data name="RequestEntityTooLarge" xml:space="preserve">
+        <value>The request's payload was too large.</value>
+    </data>
+    <data name="RequestUriTooLong" xml:space="preserve">
+        <value>The request's URL was too large.</value>
+    </data>
+    <data name="UnsupportedMediaType" xml:space="preserve">
+        <value>The request's entity was of an unsupported media type.</value>
+    </data>
+    <data name="RequestedRangeNotSatisfiable" xml:space="preserve">
+        <value>The request resource range can't be satisfiable.</value>
+    </data>
+    <data name="ExpectationFailed" xml:space="preserve">
+        <value>The server doesn't meet the request's expectations.</value>
+    </data>
+    <data name="MisdirectedRequest" xml:space="preserve">
+        <value>The server is unable to produce a response.</value>
+    </data>
+    <data name="UnprocessableEntity" xml:space="preserve">
+        <value>The request was unable to be followed due to semantic errors.</value>
+    </data>
+    <data name="Locked" xml:space="preserve">
+        <value>The resource the request is trying to access is locked.</value>
+    </data>
+    <data name="FailedDependency" xml:space="preserve">
+        <value>The request failed because it depended on another failed request.</value>
+    </data>
+    <data name="UpgradeRequired" xml:space="preserve">
+        <value>The request must upgrade to a different protocol to be satisfied.</value>
+    </data>
+    <data name="PreconditionRequired" xml:space="preserve">
+        <value>The server requires the request to be conditional.</value>
+    </data>
+    <data name="TooManyRequests" xml:space="preserve">
+        <value>The client has sent too many requests to the server.</value>
+    </data>
+    <data name="RequestHeaderFieldsTooLarge" xml:space="preserve">
+        <value>The request sent headers that are too large.</value>
+    </data>
+    <data name="UnavailableForLegalReasons" xml:space="preserve">
+        <value>The requested resource has been taken down in response to a legal demand.</value>
+    </data>
+    <data name="InternalServerError" xml:space="preserve">
+        <value>An internal server error has occurred.</value>
+    </data>
+    <data name="NotImplemented" xml:space="preserve">
+        <value>The request method has not been implemented by the server.</value>
+    </data>
+    <data name="BadGateway" xml:space="preserve">
+        <value>The server received an invalid response from an upstream server.</value>
+    </data>
+    <data name="ServiceUnavailable" xml:space="preserve">
+        <value>The server is temporarily unavailable, likely due to maintenance.</value>
+    </data>
+    <data name="GatewayTimeout" xml:space="preserve">
+        <value>The server didn't receive a timely response from an upstream server.</value>
+    </data>
+    <data name="HttpVersionNotSupported" xml:space="preserve">
+        <value>The server does not support the HTTP protocol version used.</value>
+    </data>
+    <data name="VariantAlsoNegotiates" xml:space="preserve">
+        <value>A circular reference occurred during content negotiation.</value>
+    </data>
+    <data name="InsufficientStorage" xml:space="preserve">
+        <value>The server is unable to store the representation needed to complete the request.</value>
+    </data>
+    <data name="LoopDetected" xml:space="preserve">
+        <value>The server detected an infinite loop while processing the request.</value>
+    </data>
+    <data name="NotExtended" xml:space="preserve">
+        <value>Further extensions to the requests are needed to be processed.</value>
+    </data>
+    <data name="NetworkAuthenticationRequired" xml:space="preserve">
+        <value>The client needs to authenticate to gain network access.</value>
+    </data>
+    <data name="UnknownError" xml:space="preserve">
+        <value>Unknown error.</value>
+    </data>
+</root>

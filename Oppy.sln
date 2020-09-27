@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7D205D7C-D7D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ultz.Oppy", "src\Ultz.Oppy\Ultz.Oppy.csproj", "{D37FF682-49A9-4DD4-96B5-178E5A3FFB65}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ultz.Private.Oppy.Build", "src\Ultz.Private.Oppy.Build\Ultz.Private.Oppy.Build.csproj", "{E8E1254E-9AD2-47D5-8408-8380E5D72DD4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,8 +23,11 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D37FF682-49A9-4DD4-96B5-178E5A3FFB65} = {7D205D7C-D7D9-4052-8400-30176F534367}
+		{E8E1254E-9AD2-47D5-8408-8380E5D72DD4} = {7D205D7C-D7D9-4052-8400-30176F534367}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E8E1254E-9AD2-47D5-8408-8380E5D72DD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8E1254E-9AD2-47D5-8408-8380E5D72DD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D37FF682-49A9-4DD4-96B5-178E5A3FFB65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D37FF682-49A9-4DD4-96B5-178E5A3FFB65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D37FF682-49A9-4DD4-96B5-178E5A3FFB65}.Debug|x64.ActiveCfg = Debug|Any CPU
